@@ -81,7 +81,7 @@
       }
     }
   },
-  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postCreateCommand": "bash .devcontainer/setup.sh && git lfs install",
   "forwardPorts": [
     8000,
     3000
