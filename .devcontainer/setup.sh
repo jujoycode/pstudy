@@ -136,5 +136,3 @@ echo ""
 echo "\n\n📋 Environment info:"
 rustc --version
 cargo --version
-node --version
-pnpm --version
