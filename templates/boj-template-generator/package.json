@@ -1,0 +1,25 @@
+{
+  "name": "boj-template-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "get-problem": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "inquirer": "^9.0.0",
+    "chalk": "^5.0.0",
+    "ora": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "tsx": "^4.0.0",
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.0"
+}

@@ -1,10 +1,15 @@
 {
-  "name": "Rust PS Environment",
+  "name": "Rust PS + Node.js CLI Tools Environment",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/rust:1": {
       "version": "latest",
       "profile": "default"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22",
+      "nodeGypDependencies": true,
+      "nvmVersion": "latest"
     },
     "ghcr.io/devcontainers/features/git:1": {}
   },
@@ -12,11 +17,19 @@
     "vscode": {
       "extensions": [
         "rust-lang.rust-analyzer",
+        "dustypomerleau.rust-syntax",
         "vadimcn.vscode-lldb",
         "tamasfe.even-better-toml",
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-json",
+        "ms-vscode.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-node-debug2",
+        "ms-vscode.js-debug",
         "formulahendry.code-runner",
         "ms-vscode.test-adapter-converter",
         "ms-vscode.hexdump",
+        "PKief.material-icon-theme",
         "streetsidesoftware.code-spell-checker"
       ],
       "settings": {
@@ -27,25 +40,59 @@
         "rust-analyzer.inlayHints.enable": true,
         "rust-analyzer.inlayHints.typeHints": true,
         "rust-analyzer.inlayHints.parameterHints": true,
+        "typescript.preferences.importModuleSpecifier": "relative",
+        "typescript.suggest.autoImports": true,
+        "typescript.updateImportsOnFileMove.enabled": "always",
         "editor.formatOnSave": true,
         "editor.inlayHints.enabled": "on",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.organizeImports": "explicit"
+        },
         "files.autoSave": "afterDelay",
         "files.autoSaveDelay": 1000,
+        "files.associations": {
+          "*.json": "jsonc"
+        },
         "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.scrollback": 10000,
+        "terminal.integrated.fontSize": 14,
         "code-runner.runInTerminal": true,
-        "code-runner.clearPreviousOutput": true
+        "code-runner.clearPreviousOutput": true,
+        "code-runner.saveAllFilesBeforeRun": true,
+        "code-runner.executorMap": {
+          "rust": "cd $dir && cargo run",
+          "javascript": "node",
+          "typescript": "npx tsx"
+        },
+        "search.exclude": {
+          "**/target": true,
+          "**/node_modules": true,
+          "**/.git": true,
+          "**/dist": true,
+          "**/build": true
+        },
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "package.json": "package-lock.json,pnpm-lock.yaml",
+          "Cargo.toml": "Cargo.lock",
+          "tsconfig.json": "tsconfig.*.json"
+        }
       }
     }
   },
   "postCreateCommand": "bash .devcontainer/setup.sh",
-  "forwardPorts": [8000, 3000],
+  "forwardPorts": [
+    8000,
+    3000
+  ],
   "portsAttributes": {
     "8000": {
-      "label": "Test Server",
+      "label": "Rust Test Server",
       "onAutoForward": "notify"
     },
     "3000": {
-      "label": "Dev Server", 
+      "label": "CLI Tool Test Server",
       "onAutoForward": "notify"
     }
   },

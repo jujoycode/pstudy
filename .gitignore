@@ -1,0 +1,21 @@
+# Rust
+/target/
+Cargo.lock
+
+# Node
+/node_modules/
+*/node_modules/
+*/**/node_modules/
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PS specific
+/solutions/
+/temp/
+*.tmp
