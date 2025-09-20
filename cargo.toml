@@ -1,0 +1,32 @@
+[package]
+name = "rust-ps"
+version = "0.1.0"
+edition = "2021"
+
+# PS에 자주 사용되는 의존성들
+[dependencies]
+# 없음 - 대부분의 PS는 표준 라이브러리만 사용
+
+[dev-dependencies]
+# 테스트 및 벤치마킹용
+criterion = "0.5"
+
+# PS용 빠른 실행을 위한 최적화 설정
+[profile.dev]
+opt-level = 1  # 디버그 모드에서도 약간의 최적화
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+# 여러 문제를 위한 bin 설정 예시
+# [[bin]]
+# name = "problem1"
+# path = "problems/baekjoon/problem1.rs"
+
+# 벤치마킹 설정
+[[bench]]
+name = "algorithm_bench"
+harness = false
+path = "benches/algorithm_bench.rs"
