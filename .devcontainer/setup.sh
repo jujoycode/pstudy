@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
 
 echo "🦀 Setting up Rust PS + Node.js CLI Tools environment..."

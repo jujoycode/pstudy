@@ -81,20 +81,6 @@
       }
     }
   },
-  "postCreateCommand": "bash .devcontainer/setup.sh && git lfs install",
-  "forwardPorts": [
-    8000,
-    3000
-  ],
-  "portsAttributes": {
-    "8000": {
-      "label": "Rust Test Server",
-      "onAutoForward": "notify"
-    },
-    "3000": {
-      "label": "CLI Tool Test Server",
-      "onAutoForward": "notify"
-    }
-  },
+  "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
   "remoteUser": "vscode"
 }

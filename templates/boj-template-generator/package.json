@@ -5,19 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "get-problem": "tsx src/index.ts"
+    "get-problem": "tsx index.ts"
   },
   "dependencies": {
-    "commander": "^14.0.0",
-    "inquirer": "^9.0.0",
+    "@inquirer/prompts": "^7.8.6",
     "chalk": "^5.0.0",
+    "commander": "^14.0.0",
     "ora": "^8.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
+    "@types/node": "^24.5.2",
     "tsx": "^4.0.0",
-    "@types/inquirer": "^9.0.0",
-    "@types/node": "^20.0.0"
+    "typescript": "^5.0.0"
   },
   "author": "",
   "license": "ISC",
