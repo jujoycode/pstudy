@@ -77,19 +77,17 @@ alias pnb='pnpm run build'
 alias pnt='pnpm test'
 
 # CLI 도구 실행 및 테스트
-alias run-ts='npx tsx'
+alias get-problem='cd templates/boj-template-generator && pnpm run get-problem'
 alias watch-ts='npx nodemon --exec "npx tsx"'
 alias build-cli='pnpm run build'
 alias test-cli='node dist/index.js'
-
-# CLI 개발 유틸리티
-alias create-cli='mkdir -p src && pnpm init && pnpm add commander inquirer chalk ora fs-extra && pnpm add -D @types/node @types/inquirer @types/fs-extra tsx nodemon typescript'
 
 # 유틸리티 명령어들
 alias json='python3 -m json.tool'  # JSON 포맷팅
 alias uuid='node -e "console.log(require(\"crypto\").randomUUID())"'  # UUID 생성
 
 # 디렉토리 이동 단축키
+alias home='cd /workspaces/pstudy'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -la'

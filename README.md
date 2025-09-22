@@ -28,4 +28,4 @@ Rust를 중심으로 알고리즘 문제 해결을 학습하는 개인 저장소
 
 ## 🔨 유틸리티
 
-- `templates/boj-template-generator`: 백준 문제 번호를 CLI 형태로 입력받아 문제가 담긴 md 파일과 기본 형태의 rs 파일 생성
+- `templates/boj-template-generator`: 백준 문제 번호를 CLI 형태로 입력받아 문제가 담긴 기본 형태의 rs 파일 생성
