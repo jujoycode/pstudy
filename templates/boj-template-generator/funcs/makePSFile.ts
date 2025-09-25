@@ -18,12 +18,19 @@ use std::io;
 
 fn main() {
     let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
-    let n: i32 = input.trim().parse().unwrap();
-
-    // 여기에 풀이 작성
-
-    println!("{}", n);
+    
+    // 한 줄 입력 처리
+    io::stdin()
+        .read_line(&mut input)
+        .expect("입력에 실패했습니다.");
+    
+    // 공백을 기준으로 값 분리
+    let nums: Vec<i32> = input
+        .split_whitespace()
+        .map(|s| s.parse().unwrap())
+        .collect();
+    
+    println!("");
 }
 
       `
